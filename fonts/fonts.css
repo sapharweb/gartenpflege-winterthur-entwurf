@@ -1,0 +1,5 @@
+/* Selbst gehostete Schriften fuer das Theme Garden (Hallmark). SIL Open Font License 1.1, Lizenztexte liegen daneben (OFL-*.txt).
+   Quellen: github.com/google/fonts, Ordner ofl/vollkorn, ofl/hankengrotesk, ofl/newsreader. Auf Latein (inkl. Umlaute, Anfuehrungszeichen, Euro) gekuerzt und als woff2 gespeichert. */
+@font-face { font-family: "Vollkorn"; src: url("vollkorn-600.woff2") format("woff2"); font-weight: 600; font-style: normal; font-display: swap; }
+@font-face { font-family: "Hanken Grotesk"; src: url("hanken-grotesk-400-500.woff2") format("woff2"); font-weight: 400 500; font-style: normal; font-display: swap; }
+@font-face { font-family: "Newsreader"; src: url("newsreader-400.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }

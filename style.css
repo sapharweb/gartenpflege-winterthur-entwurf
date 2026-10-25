@@ -1,0 +1,93 @@
+/* Hallmark · shape: Marquee Hero (draw ca3270) · genre: editorial · theme: Garden (by request) · job: hire · draw: ca3270
+ * hero: Banner (swapped from the draw's Poster: the statement sits on a green ink band, a panorama strip runs under it) · nav: masthead · footer: letter close · imagery: photographs, 2 stand-ins from Unsplash, local files · signature: the statement on green ink with the garden strip under it
+ * axes: light/roman-serif/chromatic-green · posture: committed · contrast: pass · fold: pass · v2.0.0 */
+/* Hallmark · pre-emit critique: P4 H4 E4 S3 R4 V4 · weakest: S, the local.ch entry names two jobs and no work, so the page cannot say much only this business could say; the headline repeats the entry's two jobs, the rest is address and contact, and the extra services are a marked proposal */
+@import url("./tokens.css");
+@import url("./base.css");
+
+.skip { position: absolute; left: var(--space-md); top: calc(-1 * var(--space-3xl)); z-index: var(--z-toast); padding: var(--space-xs) var(--space-md); background: var(--color-ink); color: var(--color-paper); }
+.skip:focus-visible { top: var(--space-md); }
+
+.btn { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding-inline: var(--space-lg); border: var(--rule-hair) solid var(--color-rule-2); border-radius: var(--radius-pill); background: transparent; color: var(--color-ink); font: 500 var(--text-md)/1 var(--font-body); white-space: nowrap; text-decoration: none; cursor: pointer; transition: background-color var(--dur-short) var(--ease-out), border-color var(--dur-short) var(--ease-out), color var(--dur-short) var(--ease-out), transform var(--dur-micro) var(--ease-out); }
+.btn:hover { background: var(--tint-moss); }
+.btn:active { transform: translateY(1px); }
+.btn:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; }
+.btn[aria-disabled="true"], .btn:disabled { opacity: 0.55; cursor: not-allowed; transform: none; }
+.btn--primary { background: var(--color-accent-2); border-color: var(--color-accent-2); color: var(--color-ink); }
+.btn--primary:hover { background: var(--color-paper); border-color: var(--color-paper); }
+.btn--ghost { border-color: var(--color-paper); color: var(--color-paper); }
+.btn--ghost:hover { background: color-mix(in oklab, var(--color-paper) 16%, transparent); }
+@media (prefers-reduced-motion: reduce) { .btn { transition: background-color var(--dur-short) linear; } }
+
+.notice { background: var(--color-paper-3); color: var(--color-ink); font-size: var(--text-sm); }
+.notice .container { padding-block: var(--space-sm); }
+
+.masthead { border-bottom: var(--rule-hair) solid var(--color-rule); }
+.masthead .container { display: flex; align-items: center; justify-content: space-between; gap: var(--space-lg); min-height: 72px; }
+.wordmark { margin: 0; font: 600 var(--text-xl)/1 var(--font-display); letter-spacing: var(--tracking-display); white-space: nowrap; text-decoration: none; color: var(--color-ink); }
+.masthead nav { display: flex; align-items: center; gap: var(--space-xl); }
+.masthead nav a:not(.btn) { text-decoration: none; padding-block: var(--space-xs); }
+.masthead nav a:not(.btn):hover { text-decoration: underline; text-decoration-color: var(--color-accent); text-underline-offset: 0.3em; }
+@media (max-width: 40rem) { .masthead nav a:not(.btn) { display: none; } }
+@media (max-width: 60rem) { .masthead nav { gap: var(--space-lg); } }
+
+/* The statement: green ink band, the sentence large on the left, the action on the right */
+.statement { background: var(--color-ink); color: var(--color-paper); padding-block: var(--space-2xl); --color-focus: var(--color-accent-2); }
+.statement__grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--gap-columns); row-gap: var(--space-xl); align-items: end; }
+.statement h1 { grid-column: 1 / 9; max-width: none; color: var(--color-paper); font-size: clamp(2.5rem, 4.6vw + 0.5rem, 5.25rem); }
+.statement__side { grid-column: 9 / 13; }
+.statement .lead { color: var(--color-paper); max-width: 30ch; }
+.actions { display: flex; flex-wrap: wrap; gap: var(--space-md); margin-top: var(--space-lg); }
+.statement .num { font-variant-numeric: tabular-nums lining-nums; }
+@media (max-width: 60rem) { .statement { padding-block: var(--space-xl); } .statement h1, .statement__side { grid-column: 1 / -1; } }
+
+.strip { height: clamp(240px, 46dvh, 560px); border-radius: 0; }
+.caption { font: 400 var(--text-sm)/1.4 var(--font-outlier); color: var(--color-muted); max-width: none; }
+.strip__caption { padding-block: var(--space-sm) 0; }
+
+/* Arbeiten as an index of numbered rows */
+.work { padding-block: var(--section-gap); }
+.work__grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--gap-columns); row-gap: var(--space-2xl); }
+.work__head { grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: var(--space-md) var(--gap-columns); }
+.work__head .lead { font-size: var(--text-md); line-height: 1.55; color: var(--color-ink-2); }
+.index { grid-column: 1 / -1; margin: 0; padding: 0; list-style: none; border-top: var(--rule-hair) solid var(--color-rule-2); }
+.index li { display: grid; grid-template-columns: clamp(3.5rem, 7vw, 6rem) minmax(0, 7fr) minmax(0, 4fr); column-gap: var(--gap-columns); row-gap: var(--space-2xs); align-items: center; padding-block: var(--space-xl); border-bottom: var(--rule-hair) solid var(--color-rule); }
+.index .n { font: 600 clamp(3.5rem, 7vw, 6rem)/0.8 var(--font-display); font-variant-numeric: lining-nums proportional-nums; color: var(--color-accent); }
+.index h3 { font-size: var(--text-section); line-height: 1.05; max-width: none; }
+.index .note { font: 400 var(--text-md)/1.4 var(--font-outlier); color: var(--color-muted); }
+.fill { padding: 0 0.25em; border: 1px dashed color-mix(in oklch, var(--color-muted) 70%, transparent); border-radius: 3px; color: var(--color-muted); -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+@media (max-width: 60rem) { .index li { grid-template-columns: clamp(3.5rem, 7vw, 6rem) minmax(0, 1fr); } .index .n { grid-row: 1 / 3; } .index h3, .index .note { grid-column: 2; } }
+
+/* Adresse: facts on the left, a portrait photograph on the right */
+.where { padding-block: var(--section-gap-s); background: var(--color-paper-2); }
+.where__grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--gap-columns); row-gap: var(--space-2xl); align-items: start; }
+.where__text { grid-column: 1 / 7; }
+.facts { margin: var(--space-xl) 0 0; border-top: var(--rule-hair) solid var(--color-rule-2); }
+.facts div { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 3fr); column-gap: var(--gap-columns); align-items: baseline; padding-block: var(--space-md); border-bottom: var(--rule-hair) solid var(--color-rule); }
+.facts dt { font-size: var(--text-sm); color: var(--color-muted); }
+.facts dd { margin: 0; font-size: var(--text-lg); color: var(--color-ink); }
+.photo { grid-column: 8 / 13; margin: 0; }
+.photo [data-slot] { aspect-ratio: 4 / 5; min-height: 440px; border-radius: var(--radius-card); }
+.photo [data-slot] > img { border-radius: var(--radius-card); outline: var(--rule-hair) solid color-mix(in oklab, var(--color-ink) 8%, transparent); outline-offset: -1px; }
+.photo .caption { margin-top: var(--space-sm); }
+@media (max-width: 60rem) { .where__text, .photo { grid-column: 1 / -1; } .photo [data-slot] { min-height: 0; aspect-ratio: 4 / 3; } }
+@media (max-width: 40rem) { .facts div { grid-template-columns: minmax(0, 1fr); row-gap: var(--space-3xs); } }
+
+/* Kontakt: the telephone number once, big, on the moss wash */
+.contact { background: var(--tint-moss); padding-block: var(--section-gap-s); }
+.contact__grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--gap-columns); row-gap: var(--space-xl); align-items: end; }
+.contact h2 { grid-column: 1 / 6; }
+.contact__lines { grid-column: 6 / 13; display: flex; flex-direction: column; gap: var(--space-md); }
+.phone { font: 600 clamp(2.25rem, 5vw, 4.25rem)/1 var(--font-display); letter-spacing: var(--tracking-display); font-variant-numeric: lining-nums tabular-nums; color: var(--color-ink); text-decoration: none; white-space: nowrap; }
+.phone:hover { text-decoration: underline; text-decoration-color: var(--color-accent); text-decoration-thickness: 2px; text-underline-offset: 0.12em; }
+.mail { font-size: var(--text-xl); color: var(--color-ink); overflow-wrap: anywhere; }
+.mail:hover { text-decoration-color: var(--color-accent); }
+@media (max-width: 60rem) { .contact h2, .contact__lines { grid-column: 1 / -1; } }
+
+/* Footer: a closing line, then the small print */
+.close { padding-block: var(--space-2xl); color: var(--color-ink-2); font-size: var(--text-sm); }
+.close__grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--gap-columns); row-gap: var(--space-md); }
+.close__line { grid-column: 1 / -1; font: 600 var(--text-xl)/1.2 var(--font-display); color: var(--color-ink); max-width: none; margin-bottom: var(--space-md); }
+.about { grid-column: 1 / 8; max-width: 65ch; }
+.credits { grid-column: 1 / 8; color: var(--color-muted); }
+@media (max-width: 60rem) { .about, .credits { grid-column: 1 / -1; } }
